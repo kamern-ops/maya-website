@@ -3,66 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE LIFE WORK OF MAYA YIVGI - EXPERIENCE</title>
+    <title>THE LIFE WORK OF MAYA YIVGI - SPARKLE EXPERIENCE</title>
     <style>
         body {
             margin: 0; padding: 0;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
-            min-height: 100vh; background-color: #000000;
-            font-family: 'Segoe UI', sans-serif; color: #ffffff; text-align: center; overflow: hidden;
+            min-height: 100vh; 
+            /* רקע ירוק ניאון מלא - הזוהר העיקרי */
+            background-color: #39ff14; 
+            font-family: 'Segoe UI', sans-serif; 
+            color: #000000; /* טקסט שחור לקונטרסט מעולה על הירוק */
+            text-align: center; 
+            overflow: hidden; /* מונע פסי גלילה */
+            position: relative;
+            cursor: none; /* מסתיר את המצביע הרגיל כדי להדגיש את הנצנצים */
         }
+
         h1 {
-            font-size: 3.5rem; color: #39ff14;
-            text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
-            animation: glow 2s ease-in-out infinite alternate;
+            font-size: 3.5rem; 
+            color: #000000;
             margin-top: 30px;
+            font-weight: 900;
+            z-index: 10;
         }
-        @keyframes glow { from { opacity: 0.8; } to { opacity: 1; } }
-        
-        /* התמונה המעודכנת */
+
         .main-image {
             width: 80%;
             max-width: 500px;
             height: 300px;
-            object-fit: cover; /* כדי שהתמונה תמלא את הריבוע בלי להימתח */
-            border: 3px solid #39ff14; /* נשמור על המסגרת הניאון */
+            object-fit: cover;
+            border: 5px solid #ff007f; /* מסגרת ורודה ניאון כדי להפריד מהרקע הירוק */
             border-radius: 15px;
             margin-bottom: 50px;
-            box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             z-index: 10;
             position: relative;
         }
 
         .star-button {
-            display: inline-block; width: 150px; height: 150px;
-            background-color: #ff8c00; color: #000000;
-            font-size: 1.4rem; font-weight: bold; text-decoration: none;
-            line-height: 150px; cursor: pointer; transition: 0.3s;
+            display: inline-block; width: 160px; height: 160px;
+            background-color: #ff8c00; /* כתום ניאון */
+            color: #ffffff;
+            font-size: 1.5rem; font-weight: bold; text-decoration: none;
+            line-height: 160px; cursor: pointer; transition: 0.3s;
             clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-            box-shadow: 0 0 15px #ff8c00; z-index: 10; position: relative;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            z-index: 10; position: relative;
+            border: none;
         }
-        .star-button:hover { transform: scale(1.1); box-shadow: 0 0 30px #ff8c00; }
+
+        .star-button:hover { 
+            transform: scale(1.1) rotate(10deg); 
+            background-color: #ffae42;
+        }
+
+        /* בועות לאבה ורוד ניאון */
         .bubble {
-            position: absolute; background: #ff007f; border-radius: 50%;
-            bottom: -150px; filter: blur(5px); animation: rise 15s infinite ease-in;
-            box-shadow: 0 0 15px #ff007f;
+            position: absolute; 
+            background: #ff007f; 
+            border-radius: 50%;
+            bottom: -150px; 
+            filter: blur(2px); 
+            animation: rise 12s infinite ease-in-out;
+            box-shadow: 0 0 20px #ff007f;
+            opacity: 0.8;
+            z-index: 1;
         }
+
         @keyframes rise {
-            0% { transform: translateY(0); opacity: 0; }
-            10% { opacity: 0.8; }
-            100% { transform: translateY(-1200px); opacity: 0; }
+            0% { transform: translateY(0) scale(1); opacity: 0; }
+            20% { opacity: 0.8; }
+            100% { transform: translateY(-1200px) scale(1.8); opacity: 0; }
+        }
+
+        /* סגנון עבור הנצנצים שנוצרים על ידי ה-JavaScript */
+        .sparkle {
+            position: absolute;
+            pointer-events: none; /* כדי שהם לא יפריעו ללחיצות */
+            border-radius: 50%;
+            animation: fall 1s ease-out forwards;
+            z-index: 999; /* תמיד מעל הכל */
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(20px) scale(0); opacity: 0; }
         }
     </style>
 </head>
 <body>
-    <div class="bubble" style="width: 100px; height: 100px; left: 10%; animation-duration: 12s;"></div>
-    <div class="bubble" style="width: 150px; height: 150px; left: 25%; animation-duration: 18s; animation-delay: 2s;"></div>
-    <div class="bubble" style="width: 80px; height: 80px; left: 60%; animation-duration: 15s; animation-delay: 5s;"></div>
+    <div class="bubble" style="width: 120px; height: 120px; left: 15%; animation-duration: 10s;"></div>
+    <div class="bubble" style="width: 180px; height: 180px; left: 40%; animation-duration: 15s; animation-delay: 2s;"></div>
+    <div class="bubble" style="width: 90px; height: 90px; left: 75%; animation-duration: 12s; animation-delay: 5s;"></div>
     
     <h1>THE LIFE WORK OF MAYA YIVGI</h1>
     
-    <img src="https://images.unsplash.com/photo-1549413204-629a43a18a58?q=80&w=600&auto=format&fit=crop" alt="Fluorescent Coral Reef Neon Atmosphere" class="main-image">
+    <img src="https://images.unsplash.com/photo-1549413204-629a43a18a58?q=80&w=600&auto=format&fit=crop" alt="Sea Life" class="main-image">
     
     <a href="maintenance.html" class="star-button">גלו עוד</a>
+
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            // יצירת נצנץ חדש בכל תזוזה
+            for (let i = 0; i < 3; i++) { // יוצר 3 נצנצים בכל תנועה לאפקט מוגבר
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                
+                // הגדרת מיקום התחלתי במיקום העכבר
+                sparkle.style.left = e.pageX + 'px';
+                sparkle.style.top = e.pageY + 'px';
+                
+                // הגדרת גודל אקראי
+                const size = Math.random() * 8 + 2 + 'px'; // בין 2 ל-10 פיקסל
+                sparkle.style.width = size;
+                sparkle.style.height = size;
+                
+                // הגדרת צבע אקראי מתוך הפלטה: ורוד, כתום, או לבן
+                const colors = ['#ff007f', '#ff8c00', '#ffffff'];
+                sparkle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                // הוספת הנצנץ לדף
+                document.body.appendChild(sparkle);
+                
+                // הסרת הנצנץ אחרי שניה (כדי לא להעמיס על הדפדפן)
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 1000);
+            }
+        });
+    </script>
 </body>
 </html>
