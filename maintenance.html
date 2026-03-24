@@ -2,21 +2,34 @@
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>האתר בתחזוקה</title>
+    <title>האתר בתחזוקה - נתראה בקרוב</title>
     <style>
         body {
             display: flex; align-items: center; justify-content: center; height: 100vh;
-            margin: 0; background-color: #000000; color: #39ff14;
+            margin: 0; 
+            /* רקע ירוק ניאון מלא */
+            background-color: #39ff14; 
+            color: #000000;
             font-family: sans-serif; text-align: center;
         }
-        .box { padding: 40px; border: 3px solid #ff007f; border-radius: 20px; box-shadow: 0 0 20px #ff007f; }
+        .box { 
+            padding: 50px; 
+            border: 5px solid #ff007f; /* מסגרת ורודה ניאון */
+            border-radius: 20px; 
+            background-color: white; /* קופסה לבנה לקריאות מקסימלית */
+            box-shadow: 0 0 30px rgba(255, 0, 127, 0.5); 
+        }
+        h1 { margin: 0 0 20px 0; font-size: 2.5rem; color: #000000; }
+        p { font-size: 1.2rem; color: #000000; margin-bottom: 30px; }
+        a { color: #ff8c00; font-weight: bold; text-decoration: none; font-size: 1.2rem; }
+        a:hover { color: #ffae42; }
     </style>
 </head>
 <body>
     <div class="box">
         <h1>תודה שהתעניינתם!</h1>
-        <p style="color:white">האתר כרגע בתחזוקה, נתראה בקרוב.</p>
-        <a href="index.html" style="color:#ff8c00; text-decoration:none; font-weight:bold;">חזרה לדף הבית</a>
+        <p>האתר כרגע בתחזוקה, נתראה בקרוב.</p>
+        <a href="index.html">חזרה לדף הבית</a>
     </div>
 </body>
 </html>
