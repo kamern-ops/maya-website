@@ -3,99 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE LIFE WORK OF MAYA YIVGI - SPARKLE EXPERIENCE</title>
+    <title>THE LIFE WORK OF MAYA YIVGI - NEON OCEAN</title>
     <style>
         body {
             margin: 0; padding: 0;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             min-height: 100vh; 
-            /* רקע ירוק ניאון מלא - הזוהר העיקרי */
-            background-color: #39ff14; 
+            background-color: #39ff14; /* ירוק ניאון מלא */
             font-family: 'Segoe UI', sans-serif; 
-            color: #000000; /* טקסט שחור לקונטרסט מעולה על הירוק */
-            text-align: center; 
-            overflow: hidden; /* מונע פסי גלילה */
-            position: relative;
-            cursor: none; /* מסתיר את המצביע הרגיל כדי להדגיש את הנצנצים */
+            color: #000000; text-align: center; 
+            overflow: hidden; position: relative; 
+            cursor: none; /* הנצנצים הם העכבר שלך */
         }
 
         h1 {
-            font-size: 3.5rem; 
-            color: #000000;
-            margin-top: 30px;
-            font-weight: 900;
-            z-index: 10;
+            font-size: 3.5rem; color: #000000; font-weight: 900;
+            z-index: 10; margin-top: 30px;
+            text-shadow: 2px 2px 0px #ff007f; /* צל ורוד לכותרת */
         }
 
         .main-image {
-            width: 80%;
-            max-width: 500px;
-            height: 300px;
-            object-fit: cover;
-            border: 5px solid #ff007f; /* מסגרת ורודה ניאון כדי להפריד מהרקע הירוק */
-            border-radius: 15px;
-            margin-bottom: 50px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            z-index: 10;
-            position: relative;
+            width: 80%; max-width: 500px; height: 300px; object-fit: cover;
+            border: 5px solid #ff007f; border-radius: 20px; margin-bottom: 50px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            z-index: 10; position: relative;
         }
 
+        /* כפתור כוכב כתום ניאון */
         .star-button {
             display: inline-block; width: 160px; height: 160px;
-            background-color: #ff8c00; /* כתום ניאון */
-            color: #ffffff;
+            background-color: #ff8c00; color: #ffffff;
             font-size: 1.5rem; font-weight: bold; text-decoration: none;
             line-height: 160px; cursor: pointer; transition: 0.3s;
             clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             z-index: 10; position: relative;
-            border: none;
         }
+        .star-button:hover { transform: scale(1.1) rotate(10deg); filter: brightness(1.2); }
 
-        .star-button:hover { 
-            transform: scale(1.1) rotate(10deg); 
-            background-color: #ffae42;
-        }
-
-        /* בועות לאבה ורוד ניאון */
+        /* בועות לאבה ורודות - תדירות גבוהה */
         .bubble {
-            position: absolute; 
-            background: #ff007f; 
-            border-radius: 50%;
-            bottom: -150px; 
-            filter: blur(2px); 
-            animation: rise 12s infinite ease-in-out;
-            box-shadow: 0 0 20px #ff007f;
-            opacity: 0.8;
-            z-index: 1;
+            position: absolute; background: #ff007f; border-radius: 50%;
+            bottom: -250px; filter: blur(3px); animation: rise linear infinite;
+            box-shadow: 0 0 30px #ff007f; opacity: 0.8; z-index: 1;
         }
 
         @keyframes rise {
             0% { transform: translateY(0) scale(1); opacity: 0; }
-            20% { opacity: 0.8; }
-            100% { transform: translateY(-1200px) scale(1.8); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-1400px) scale(2.5); opacity: 0; }
         }
 
-        /* סגנון עבור הנצנצים שנוצרים על ידי ה-JavaScript */
+        /* כפתור הדג השקוף/שר */
+        #music-control {
+            position: fixed; top: 20px; left: 20px; z-index: 1000;
+            background: rgba(255, 0, 127, 0.2); border: 2px solid #ff007f;
+            border-radius: 50%; width: 70px; height: 70px;
+            font-size: 40px; cursor: pointer; transition: 0.3s;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 15px #ff007f;
+        }
+
+        /* אפקט רטט כשהדג שר */
+        .singing {
+            animation: vibrate 0.3s infinite;
+            background: #ff8c00 !important; /* משנה צבע לכתום כשהוא שר */
+            box-shadow: 0 0 30px #ff8c00 !important;
+        }
+
+        @keyframes vibrate {
+            0% { transform: translate(0); }
+            25% { transform: translate(2px, -2px) rotate(5deg); }
+            50% { transform: translate(-2px, 2px) rotate(-5deg); }
+            75% { transform: translate(2px, 2px); }
+            100% { transform: translate(0); }
+        }
+
         .sparkle {
-            position: absolute;
-            pointer-events: none; /* כדי שהם לא יפריעו ללחיצות */
-            border-radius: 50%;
-            animation: fall 1s ease-out forwards;
-            z-index: 999; /* תמיד מעל הכל */
+            position: absolute; pointer-events: none; border-radius: 50%;
+            animation: fall 0.8s ease-out forwards; z-index: 999;
         }
-
-        @keyframes fall {
-            0% { transform: translateY(0) scale(1); opacity: 1; }
-            100% { transform: translateY(20px) scale(0); opacity: 0; }
-        }
+        @keyframes fall { 0% { transform: translateY(0) scale(1); opacity: 1; } 100% { transform: translateY(40px) scale(0); opacity: 0; } }
     </style>
 </head>
 <body>
-    <div class="bubble" style="width: 120px; height: 120px; left: 15%; animation-duration: 10s;"></div>
-    <div class="bubble" style="width: 180px; height: 180px; left: 40%; animation-duration: 15s; animation-delay: 2s;"></div>
-    <div class="bubble" style="width: 90px; height: 90px; left: 75%; animation-duration: 12s; animation-delay: 5s;"></div>
+
+    <button id="music-control" onclick="toggleMusic()">🐠</button>
     
+    <audio id="bg-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="bubble" style="width: 100px; left: 5%; animation-duration: 7s; animation-delay: -1s;"></div>
+    <div class="bubble" style="width: 160px; left: 12%; animation-duration: 10s; animation-delay: -5s;"></div>
+    <div class="bubble" style="width: 80px; left: 22%; animation-duration: 6s; animation-delay: -2s;"></div>
+    <div class="bubble" style="width: 130px; left: 32%; animation-duration: 12s; animation-delay: -8s;"></div>
+    <div class="bubble" style="width: 70px; left: 42%; animation-duration: 8s; animation-delay: -4s;"></div>
+    <div class="bubble" style="width: 150px; left: 52%; animation-duration: 11s; animation-delay: -3s;"></div>
+    <div class="bubble" style="width: 95px; left: 62%; animation-duration: 9s; animation-delay: -6s;"></div>
+    <div class="bubble" style="width: 120px; left: 72%; animation-duration: 13s; animation-delay: -10s;"></div>
+    <div class="bubble" style="width: 85px; left: 82%; animation-duration: 7s; animation-delay: -1s;"></div>
+    <div class="bubble" style="width: 140px; left: 90%; animation-duration: 15s; animation-delay: -4s;"></div>
+    <div class="bubble" style="width: 60px; left: 95%; animation-duration: 5s; animation-delay: -2s;"></div>
+
     <h1>THE LIFE WORK OF MAYA YIVGI</h1>
     
     <img src="https://images.unsplash.com/photo-1549413204-629a43a18a58?q=80&w=600&auto=format&fit=crop" alt="Sea Life" class="main-image">
@@ -103,32 +114,34 @@
     <a href="maintenance.html" class="star-button">גלו עוד</a>
 
     <script>
+        const music = document.getElementById('bg-music');
+        const fish = document.getElementById('music-control');
+
+        function toggleMusic() {
+            if (music.paused) {
+                music.play();
+                fish.classList.add('singing');
+                fish.innerHTML = '🐡'; // הדג מתנפח כשהוא שר!
+            } else {
+                music.pause();
+                fish.classList.remove('singing');
+                fish.innerHTML = '🐠';
+            }
+        }
+
+        // אפקט נצנצים שעוקבים אחרי העכבר
         document.addEventListener('mousemove', function(e) {
-            // יצירת נצנץ חדש בכל תזוזה
-            for (let i = 0; i < 3; i++) { // יוצר 3 נצנצים בכל תנועה לאפקט מוגבר
+            for (let i = 0; i < 5; i++) {
                 const sparkle = document.createElement('div');
                 sparkle.className = 'sparkle';
-                
-                // הגדרת מיקום התחלתי במיקום העכבר
                 sparkle.style.left = e.pageX + 'px';
                 sparkle.style.top = e.pageY + 'px';
-                
-                // הגדרת גודל אקראי
-                const size = Math.random() * 8 + 2 + 'px'; // בין 2 ל-10 פיקסל
-                sparkle.style.width = size;
-                sparkle.style.height = size;
-                
-                // הגדרת צבע אקראי מתוך הפלטה: ורוד, כתום, או לבן
-                const colors = ['#ff007f', '#ff8c00', '#ffffff'];
+                const size = Math.random() * 12 + 4 + 'px';
+                sparkle.style.width = size; sparkle.style.height = size;
+                const colors = ['#ff007f', '#ff8c00', '#ffffff', '#000000'];
                 sparkle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                
-                // הוספת הנצנץ לדף
                 document.body.appendChild(sparkle);
-                
-                // הסרת הנצנץ אחרי שניה (כדי לא להעמיס על הדפדפן)
-                setTimeout(() => {
-                    sparkle.remove();
-                }, 1000);
+                setTimeout(() => sparkle.remove(), 800);
             }
         });
     </script>
