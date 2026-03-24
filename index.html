@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE LIFE WORK OF MAYA YIVGI - NEON OCEAN</title>
+    <title>THE LIFE WORK OF MAYA YIVGI - SPARKLE FIX</title>
     <style>
         body {
             margin: 0; padding: 0;
@@ -13,7 +13,7 @@
             font-family: 'Segoe UI', sans-serif; 
             color: #000000; text-align: center; 
             overflow: hidden; position: relative; 
-            cursor: none; 
+            cursor: none; /* מסתיר את המצביע הרגיל כדי להבליט את הנצנצים */
         }
 
         h1 {
@@ -39,7 +39,7 @@
             z-index: 10; position: relative;
         }
 
-        /* התיקון לבועות: הוספת aspect-ratio */
+        /* הגדרות בועות עם יחס גובה-רוחב מתוקן */
         .bubble {
             position: absolute; 
             background: #ff007f; 
@@ -50,7 +50,7 @@
             box-shadow: 0 0 30px #ff007f; 
             opacity: 0.8; 
             z-index: 1;
-            aspect-ratio: 1 / 1; /* זה מבטיח שהן יהיו עגולות גם בלי להגדיר גובה לכל אחת */
+            aspect-ratio: 1 / 1; 
         }
 
         @keyframes rise {
@@ -81,9 +81,11 @@
             100% { transform: translate(0); }
         }
 
+        /* סגנון עבור הנצנצים (עכבר) */
         .sparkle {
             position: absolute; pointer-events: none; border-radius: 50%;
-            animation: fall 0.8s ease-out forwards; z-index: 999;
+            animation: fall 0.8s ease-out forwards; 
+            z-index: 999; /* תמיד מעל הכל */
         }
         @keyframes fall { 0% { transform: translateY(0) scale(1); opacity: 1; } 100% { transform: translateY(40px) scale(0); opacity: 0; } }
     </style>
@@ -129,16 +131,25 @@
             }
         }
 
+        // אפקט נצנצים שעוקבים אחרי העכבר - מתוקן
         document.addEventListener('mousemove', function(e) {
             for (let i = 0; i < 5; i++) {
                 const sparkle = document.createElement('div');
                 sparkle.className = 'sparkle';
+                // הגדרת מיקום על פי נקודות העכבר
                 sparkle.style.left = e.pageX + 'px';
                 sparkle.style.top = e.pageY + 'px';
+                
+                // הגדרת גודל אקראי
                 const size = Math.random() * 12 + 4 + 'px';
                 sparkle.style.width = size;
+                sparkle.style.height = size; // --- התיקון כאן! הוספת גובה ---
+
+                // הגדרת צבע אקראי מתוך הפלטה
                 const colors = ['#ff007f', '#ff8c00', '#ffffff', '#000000'];
                 sparkle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                // הוספה לדף והסרה לאחר שניה
                 document.body.appendChild(sparkle);
                 setTimeout(() => sparkle.remove(), 800);
             }
