@@ -9,17 +9,17 @@
             margin: 0; padding: 0;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             min-height: 100vh; 
-            background-color: #39ff14; /* ירוק ניאון מלא */
+            background-color: #39ff14; /* ירוק ניאון */
             font-family: 'Segoe UI', sans-serif; 
             color: #000000; text-align: center; 
             overflow: hidden; position: relative; 
-            cursor: none; /* הנצנצים הם העכבר שלך */
+            cursor: none; 
         }
 
         h1 {
             font-size: 3.5rem; color: #000000; font-weight: 900;
             z-index: 10; margin-top: 30px;
-            text-shadow: 2px 2px 0px #ff007f; /* צל ורוד לכותרת */
+            text-shadow: 2px 2px 0px #ff007f;
         }
 
         .main-image {
@@ -29,7 +29,6 @@
             z-index: 10; position: relative;
         }
 
-        /* כפתור כוכב כתום ניאון */
         .star-button {
             display: inline-block; width: 160px; height: 160px;
             background-color: #ff8c00; color: #ffffff;
@@ -39,13 +38,19 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             z-index: 10; position: relative;
         }
-        .star-button:hover { transform: scale(1.1) rotate(10deg); filter: brightness(1.2); }
 
-        /* בועות לאבה ורודות - תדירות גבוהה */
+        /* התיקון לבועות: הוספת aspect-ratio */
         .bubble {
-            position: absolute; background: #ff007f; border-radius: 50%;
-            bottom: -250px; filter: blur(3px); animation: rise linear infinite;
-            box-shadow: 0 0 30px #ff007f; opacity: 0.8; z-index: 1;
+            position: absolute; 
+            background: #ff007f; 
+            border-radius: 50%;
+            bottom: -250px; 
+            filter: blur(3px); 
+            animation: rise linear infinite;
+            box-shadow: 0 0 30px #ff007f; 
+            opacity: 0.8; 
+            z-index: 1;
+            aspect-ratio: 1 / 1; /* זה מבטיח שהן יהיו עגולות גם בלי להגדיר גובה לכל אחת */
         }
 
         @keyframes rise {
@@ -55,20 +60,17 @@
             100% { transform: translateY(-1400px) scale(2.5); opacity: 0; }
         }
 
-        /* כפתור הדג השקוף/שר */
         #music-control {
             position: fixed; top: 20px; left: 20px; z-index: 1000;
             background: rgba(255, 0, 127, 0.2); border: 2px solid #ff007f;
             border-radius: 50%; width: 70px; height: 70px;
             font-size: 40px; cursor: pointer; transition: 0.3s;
             display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 0 15px #ff007f;
         }
 
-        /* אפקט רטט כשהדג שר */
         .singing {
             animation: vibrate 0.3s infinite;
-            background: #ff8c00 !important; /* משנה צבע לכתום כשהוא שר */
+            background: #ff8c00 !important;
             box-shadow: 0 0 30px #ff8c00 !important;
         }
 
@@ -76,7 +78,6 @@
             0% { transform: translate(0); }
             25% { transform: translate(2px, -2px) rotate(5deg); }
             50% { transform: translate(-2px, 2px) rotate(-5deg); }
-            75% { transform: translate(2px, 2px); }
             100% { transform: translate(0); }
         }
 
@@ -105,7 +106,6 @@
     <div class="bubble" style="width: 120px; left: 72%; animation-duration: 13s; animation-delay: -10s;"></div>
     <div class="bubble" style="width: 85px; left: 82%; animation-duration: 7s; animation-delay: -1s;"></div>
     <div class="bubble" style="width: 140px; left: 90%; animation-duration: 15s; animation-delay: -4s;"></div>
-    <div class="bubble" style="width: 60px; left: 95%; animation-duration: 5s; animation-delay: -2s;"></div>
 
     <h1>THE LIFE WORK OF MAYA YIVGI</h1>
     
@@ -121,7 +121,7 @@
             if (music.paused) {
                 music.play();
                 fish.classList.add('singing');
-                fish.innerHTML = '🐡'; // הדג מתנפח כשהוא שר!
+                fish.innerHTML = '🐡';
             } else {
                 music.pause();
                 fish.classList.remove('singing');
@@ -129,7 +129,6 @@
             }
         }
 
-        // אפקט נצנצים שעוקבים אחרי העכבר
         document.addEventListener('mousemove', function(e) {
             for (let i = 0; i < 5; i++) {
                 const sparkle = document.createElement('div');
@@ -137,7 +136,7 @@
                 sparkle.style.left = e.pageX + 'px';
                 sparkle.style.top = e.pageY + 'px';
                 const size = Math.random() * 12 + 4 + 'px';
-                sparkle.style.width = size; sparkle.style.height = size;
+                sparkle.style.width = size;
                 const colors = ['#ff007f', '#ff8c00', '#ffffff', '#000000'];
                 sparkle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
                 document.body.appendChild(sparkle);
