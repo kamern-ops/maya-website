@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE LIFE WORK OF MAYA YIVGI</title>
+    <style>
+        body {
+            margin: 0; padding: 0;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            min-height: 100vh; background-color: #000000;
+            font-family: 'Segoe UI', sans-serif; color: #ffffff; text-align: center; overflow: hidden;
+        }
+        h1 {
+            font-size: 3.5rem; color: #39ff14;
+            text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow { from { opacity: 0.8; } to { opacity: 1; } }
+        .image-placeholder {
+            width: 80%; max-width: 500px; height: 300px;
+            border: 3px solid #39ff14; border-radius: 15px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 50px; box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+            z-index: 10;
+        }
+        .star-button {
+            display: inline-block; width: 150px; height: 150px;
+            background-color: #ff8c00; color: #000000;
+            font-size: 1.4rem; font-weight: bold; text-decoration: none;
+            line-height: 150px; cursor: pointer; transition: 0.3s;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            box-shadow: 0 0 15px #ff8c00; z-index: 10; position: relative;
+        }
+        .star-button:hover { transform: scale(1.1); box-shadow: 0 0 30px #ff8c00; }
+        .bubble {
+            position: absolute; background: #ff007f; border-radius: 50%;
+            bottom: -150px; filter: blur(5px); animation: rise 15s infinite ease-in;
+            box-shadow: 0 0 15px #ff007f;
+        }
+        @keyframes rise {
+            0% { transform: translateY(0); opacity: 0; }
+            10% { opacity: 0.8; }
+            100% { transform: translateY(-1200px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bubble" style="width: 100px; height: 100px; left: 10%; animation-duration: 12s;"></div>
+    <div class="bubble" style="width: 150px; height: 150px; left: 25%; animation-duration: 18s; animation-delay: 2s;"></div>
+    <div class="bubble" style="width: 80px; height: 80px; left: 60%; animation-duration: 15s; animation-delay: 5s;"></div>
+    <h1>THE LIFE WORK OF MAYA YIVGI</h1>
+    <div class="image-placeholder"><span>כאן תהיה תמונה של מאיה</span></div>
+    <a href="maintenance.html" class="star-button">גלו עוד</a>
+</body>
+</html>
